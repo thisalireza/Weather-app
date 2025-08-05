@@ -8,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class RightContainer {
 
+  imageAddress:string="../../images/81307350.jpg"
 }
