@@ -60,10 +60,10 @@
 
 
 .underline {
-  width: 50px;
-  height: 2px;
+  width: 40px;
+  height: 1px;
   background-color: #1a1a1a;
-  margin-top: 1.5rem;
+  margin-top: 1.2rem;
 }
 
 .underline-today {

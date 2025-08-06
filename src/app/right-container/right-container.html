@@ -1,7 +1,7 @@
 <div class="right-container">
   <div class="right-container-nav-bar">
     <div class="navbar-tabs">
-      <div class="today">
+      <div class="today" [className]="today ? 'today today-active' : 'today'">
         today
       </div>
       <div class="week">week</div>
@@ -17,7 +17,7 @@
       <div class="profile-image">
 
 
-        <img [src]="imageAddress" height="460" width="460" alt=""/>
+        <img [src]="" height="460" width="460" alt=""/>
       </div>
     </div>
   </div>
