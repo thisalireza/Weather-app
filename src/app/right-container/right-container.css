@@ -36,7 +36,7 @@
 
 
 .today {
-  margin-right: 10px;
+  margin-right: 20px;
   color: #c5c5c5;
 }
 
@@ -64,19 +64,19 @@
 
 
 .underline {
-  width: 45px;
-  height: 1px;
+  width: 50px;
+  height: 2px;
   background-color: #1a1a1a;
-  margin-top: 1.4rem;
+  margin-top: 1.6rem;
 }
 
 .underline-today {
-  transform: translate3d(-207%, 0, 0);
+  transform: translate3d(-228%, 0, 0);
   transition: 100ms;
 }
 
 .underline-week {
-  transform: translate3d(-91%, 0, 0);
+  transform: translate3d(-97%, 0, 0);
   transition: 100ms;
 }
 
@@ -87,18 +87,17 @@
   color: #1a1a1a;
   background-color: #ffffff;
   font-size: small;
+  cursor: pointer;
 }
 
 .celsius:hover {
   color: #ffffff;
   background-color: #1a1a1a;
-  cursor: pointer;
 }
 
 .celsius-active {
   color: #ffffff;
   background-color: #1a1a1a;
-  cursor: pointer;
 }
 
 .fahrenheit {
@@ -109,26 +108,26 @@
   font-size: small;
   margin-left: 10px;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .fahrenheit :hover {
   color: #ffffff;
   background-color: #1a1a1a;
-  cursor: pointer;
 }
 
 
 .fahrenheit-active {
   color: #ffffff;
   background-color: #1a1a1a;
-  cursor: pointer;
 }
 
 
-.profile-image img{
+.profile-image img {
   width: 40px;
   height: 40px;
-  border-radius: 5px ;
+  border-radius: 5px;
   margin-left: 10px;
   margin-right: 10px;
+  cursor: pointer;
 }
