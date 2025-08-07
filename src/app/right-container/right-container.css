@@ -45,6 +45,10 @@
   cursor: pointer;
 }
 
+.today-active {
+  color: #1a1a1a;
+}
+
 .week {
   color: #c5c5c5;
 }
@@ -54,32 +58,32 @@
   cursor: pointer;
 }
 
-.weak-active {
+.week-active {
   color: #1a1a1a;
 }
 
 
 .underline {
-  width: 40px;
+  width: 45px;
   height: 1px;
   background-color: #1a1a1a;
-  margin-top: 1.2rem;
+  margin-top: 1.4rem;
 }
 
 .underline-today {
-  transform: translate3d(200%, 0, 0);
+  transform: translate3d(-207%, 0, 0);
   transition: 100ms;
 }
 
 .underline-week {
-  transform: translate3d(100%, 0, 0);
+  transform: translate3d(-91%, 0, 0);
   transition: 100ms;
 }
 
 
 .celsius {
-  border-radius: 500px;
-  padding: 5px 7px;
+  border-radius: 100%;
+  padding: 5px 8px;
   color: #1a1a1a;
   background-color: #ffffff;
   font-size: small;
@@ -94,11 +98,12 @@
 .celsius-active {
   color: #ffffff;
   background-color: #1a1a1a;
+  cursor: pointer;
 }
 
 .fahrenheit {
-  border-radius: 500px;
-  padding: 5px 7px;
+  border-radius: 100%;
+  padding: 5px 8px;
   color: #1a1a1a;
   background-color: #ffffff;
   font-size: small;
@@ -113,9 +118,10 @@
 }
 
 
-.fahrenheit -active {
+.fahrenheit-active {
   color: #ffffff;
   background-color: #1a1a1a;
+  cursor: pointer;
 }
 
 
