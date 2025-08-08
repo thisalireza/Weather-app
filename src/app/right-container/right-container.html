@@ -14,7 +14,8 @@
       <div class="celsius" (click)="onCelsiusClick()" [className]="celsius ? 'celsius celsius-active' : 'celsius'">
         °C
       </div>
-      <div class="fahrenheit" (click)="onFahrenheitClick()" [className]="fahrenheit ? 'fahrenheit fahrenheit-active' : 'fahrenheit'">
+      <div class="fahrenheit" (click)="onFahrenheitClick()"
+           [className]="fahrenheit ? 'fahrenheit fahrenheit-active' : 'fahrenheit'">
         °F
       </div>
       <div class="profile-image">
@@ -25,6 +26,229 @@
     </div>
   </div>
   <div class="right-container-data-box">
+    <div class="right-container-week-cards">
+      @if (week) {
+        <div class="card">
+          <div class="card-day">
+            sun
+          </div>
+          <div>
+            <img class="card-temp-img" src="images/vecteezy_3d-weather-icon-day-with-rain_24825182.png" alt="">
+          </div>
+          <div class="card-temp-value">
+          <span class="temp-max">
+            15°
+          </span>
+            <span class="temp-min">
+            -3°
+          </span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-day">
+            sun
+          </div>
+          <div>
+            <img class="card-temp-img" src="images/vecteezy_3d-weather-icon-day-with-rain_24825182.png" alt="">
+          </div>
+          <div class="card-temp-value">
+          <span class="temp-max">
+            15°
+          </span>
+            <span class="temp-min">
+            -3°
+          </span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-day">
+            sun
+          </div>
+          <div>
+            <img class="card-temp-img" src="images/vecteezy_3d-weather-icon-day-with-rain_24825182.png" alt="">
+          </div>
+          <div class="card-temp-value">
+          <span class="temp-max">
+            15°
+          </span>
+            <span class="temp-min">
+            -3°
+          </span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-day">
+            sun
+          </div>
+          <div>
+            <img class="card-temp-img" src="images/vecteezy_3d-weather-icon-day-with-rain_24825182.png" alt="">
+          </div>
+          <div class="card-temp-value">
+          <span class="temp-max">
+            15°
+          </span>
+            <span class="temp-min">
+            -3°
+          </span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-day">
+            sun
+          </div>
+          <div>
+            <img class="card-temp-img" src="images/vecteezy_3d-weather-icon-day-with-rain_24825182.png" alt="">
+          </div>
+          <div class="card-temp-value">
+          <span class="temp-max">
+            15°
+          </span>
+            <span class="temp-min">
+            -3°
+          </span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-day">
+            sun
+          </div>
+          <div>
+            <img class="card-temp-img" src="images/vecteezy_3d-weather-icon-day-with-rain_24825182.png" alt="">
+          </div>
+          <div class="card-temp-value">
+          <span class="temp-max">
+            15°
+          </span>
+            <span class="temp-min">
+            -3°
+          </span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-day">
+            sun
+          </div>
+          <div>
+            <img class="card-temp-img" src="images/vecteezy_3d-weather-icon-day-with-rain_24825182.png" alt="">
+          </div>
+          <div class="card-temp-value">
+          <span class="temp-max">
+            15°
+          </span>
+            <span class="temp-min">
+            -3°
+          </span>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="right-container-today-cards">
+      @if (today) {
+        <div class="card">
+          <div class="card-day">
+            12:00
+          </div>
+          <div>
+            <img class="card-temp-img" src="images/vecteezy_3d-weather-icon-day-with-rain_24825182.png" alt="">
+          </div>
+          <div class="card-temp-value">
+
+            15°
+
+
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-day">
+            12:00
+          </div>
+          <div>
+            <img class="card-temp-img" src="images/vecteezy_3d-weather-icon-day-with-rain_24825182.png" alt="">
+          </div>
+          <div class="card-temp-value">
+
+            15°
+
+
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-day">
+            12:00
+          </div>
+          <div>
+            <img class="card-temp-img" src="images/vecteezy_3d-weather-icon-day-with-rain_24825182.png" alt="">
+          </div>
+          <div class="card-temp-value">
+
+            15°
+
+
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-day">
+            12:00
+          </div>
+          <div>
+            <img class="card-temp-img" src="images/vecteezy_3d-weather-icon-day-with-rain_24825182.png" alt="">
+          </div>
+          <div class="card-temp-value">
+
+            15°
+
+
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-day">
+            12:00
+          </div>
+          <div>
+            <img class="card-temp-img" src="images/vecteezy_3d-weather-icon-day-with-rain_24825182.png" alt="">
+          </div>
+          <div class="card-temp-value">
+
+            15°
+
+
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-day">
+            12:00
+          </div>
+          <div>
+            <img class="card-temp-img" src="images/vecteezy_3d-weather-icon-day-with-rain_24825182.png" alt="">
+          </div>
+          <div class="card-temp-value">
+
+            15°
+
+
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-day">
+            12:00
+          </div>
+          <div>
+            <img class="card-temp-img" src="images/vecteezy_3d-weather-icon-day-with-rain_24825182.png" alt="">
+          </div>
+          <div class="card-temp-value">
+
+            15°
+
+
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="right-container-today-highlight">
+
+    </div>
 
   </div>
 </div>

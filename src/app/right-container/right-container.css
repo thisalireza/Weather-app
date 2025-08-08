@@ -17,6 +17,10 @@
 
 .right-container-data-box {
   flex: 12;
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+  margin-top: 10px;
 }
 
 .navbar-tabs {
@@ -130,4 +134,45 @@
   margin-left: 10px;
   margin-right: 10px;
   cursor: pointer;
+}
+
+.right-container-week-cards, .right-container-today-cards {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.right-container-today-highlight {
+  flex: 3;
+}
+
+
+.card {
+  width: 110px;
+  height: 145px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-left: 12px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: x-small;
+  font-weight: 500;
+}
+
+.card-temp-img {
+  width: 60px;
+  height: 60px;
+}
+
+.card-day {
+  margin: 10px;
+  margin-top: 25px;
+}
+
+.card-temp-value {
+
 }
