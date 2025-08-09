@@ -130,7 +130,7 @@
 .profile-image img {
   width: 40px;
   height: 40px;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-left: 10px;
   margin-right: 10px;
   cursor: pointer;
@@ -169,10 +169,137 @@
 }
 
 .card-day {
-  margin: 10px;
-  margin-top: 25px;
+  margin: 25px 10px 10px;
+  font-size: 14px;
 }
 
 .card-temp-value {
 
+}
+
+
+.right-container-today-highlight {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.right-container-today-highlight-cards {
+  display: flex;
+  flex: 8;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  margin-top: -20px;
+  flex-wrap: wrap;
+}
+
+
+.right-container-today-highlight-title {
+  flex: 2;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size: small;
+}
+
+.right-container-today-highlight-card {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  width: 27.1%;
+  height: 150px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-left: 12px;
+  margin-top: 12px;
+}
+
+.gauge {
+  flex: 2;
+  width: 70%;
+  max-width: 180px;
+  font-size: 32px;
+  color: #004033;
+  font-weight: 500;
+  margin-bottom: -20px;
+  margin-top: -5px;
+
+}
+
+.gauge__body {
+  width: 100%;
+  height: 0;
+  padding-bottom: 50%;
+  background: #f3f3f4;
+  position: relative;
+  border-top-left-radius: 100% 200%;
+  border-top-right-radius: 100% 200%;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.gauge__fill {
+  width: inherit;
+  height: 100%;
+  padding-bottom: 50%;
+  background: #ffbf5e;
+  position: absolute;
+  transform-origin: center top;
+  transform: rotate(0.25turn);
+  transition: transform .2s ease-out;
+}
+
+
+.gauge__cover {
+  width: 75%;
+  height: 150%;
+  background: #ffffff;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 25%;
+  box-sizing: border-box;
+  color: #ffffff;
+}
+
+.right-container-today-highlight-card-title {
+  flex: 1;
+  color: #c9c9c9;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+.right-container-today-highlight-value {
+  flex: 1;
+  font-size: xx-large;
+  font-weight: 500;
+  margin-bottom: 10px;
+  z-index: 1;
+}
+
+.wind-status-value {
+  flex: 2;
+  font-size: 32px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.wind-status-logo {
+  flex: 1;
+}
+
+.wind-status-logo img {
+width: 60px;
+height: 60px;
+}
+
+.unit{
+  font-size: 16px;
 }
