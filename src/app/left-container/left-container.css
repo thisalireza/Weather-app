@@ -144,8 +144,10 @@ img.left-container-temp-image {
   align-items: center;
 }
 
-.left-container-rain-stats-img svg{
-  margin-right: 10px;
+.left-container-rain-stats-img img{
+  margin-right: 5px;
+  width: 40px;
+  height: 40px;
 
 }
 
@@ -154,8 +156,10 @@ img.left-container-temp-image {
   align-items: center;
 }
 
-.left-container-temp-summary-phrase-img svg{
-  margin-right: 10px;
+.left-container-temp-summary-phrase-img img{
+  margin-right: 5px;
+  width: 40px;
+  height: 40px;
 
 }
 

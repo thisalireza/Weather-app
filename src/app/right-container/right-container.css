@@ -329,9 +329,9 @@
   margin-right: 10px;
 }
 
-.sunrise-img svg {
-  width: 30px;
-  height: 30px;
+.sunrise-img img {
+  width: 40px;
+  height: 40px;
 }
 
 .sunrise-time {
@@ -360,9 +360,9 @@
   font-size: 16px;
 }
 
-.sunset-img svg {
-  width: 20px;
-  height: 20px;
+.sunset-img img {
+  width: 40px;
+  height: 40px;
 }
 
 .Humidity-summary {
