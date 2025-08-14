@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-
+import {Component, inject} from '@angular/core';
+import {Weather} from '../services/weather';
 @Component({
   selector: 'app-left-container',
   imports: [],
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './left-container.css'
 })
 export class LeftContainer {
-
+private weather = inject(Weather)
 }
