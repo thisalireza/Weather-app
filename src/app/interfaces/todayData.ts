@@ -1,6 +1,6 @@
-export interface todayData {
-  time:string;
-  summaryImage:string;
-  temperature:number;
+export class todayData {
+  time: string;
+  summaryImage: string;
+  temperature: number;
 
 }
