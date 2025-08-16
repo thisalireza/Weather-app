@@ -24,13 +24,15 @@
   <div class="left-container-data-box">
     <div class="left-container-temp-date">
       <div class="left container-temp-img">
-        <img class="left-container-temp-image" src="images/Weather-Icons/imgi_74_partly-cloudy-day-rain.svg" alt="">
+        <img class="left-container-temp-image" src="{{weather.temperatureData.summaryImage}}" alt="Summary Image">
       </div>
       <div class="left-container-temp-value">
-        12<sup>°C</sup>
-      </div>`
+        {{ weather.celsius == true ? weather.temperatureData.temperature : weather.celsiusToFahrenheit(weather.temperatureData.temperature) }}
+        <sup>{{ weather.celsius == true ? "°C" : "°F" }}</sup>
+      </div>
+      `
       <div class="left-container-day-time">
-        Monday , <span class="time">16:00</span>
+        {{ weather.temperatureData.day }} , <span class="time">{{ weather.temperatureData.time }}</span>
       </div>
     </div>
     <div class="dividing-line"></div>
@@ -39,13 +41,13 @@
         <div class="left-container-temp-summary-phrase-img">
 
           <img src="images/Weather-Icons/imgi_62_cloudy.svg">
-          <div class="left-container-temp-summary-value">Mostly Cloudy</div>
+          <div class="left-container-temp-summary-value">{{weather.temperatureData.summaryPhrase}}</div>
         </div>
         <div class="left-container-rain-stats">
           <div class="left-container-rain-stats-img">
-<img src="images/Weather-Icons/imgi_68_rain.svg">
+            <img src="images/Weather-Icons/imgi_68_rain.svg">
             <div class="left-container-rain-stats-value">
-              Rain - 30%
+              Rain - {{weather.temperatureData.rainPercent}}
             </div>
           </div>
         </div>
@@ -55,7 +57,7 @@
             <img src="images/3225385.jpg" alt="city">
           </div>
           <div class="left-container-location-name">
-            Tehran, Iran
+            {{weather.temperatureData.location}}
           </div>
         </div>
       </div>

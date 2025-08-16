@@ -7,5 +7,5 @@ import {Weather} from '../services/weather';
   styleUrl: './left-container.css'
 })
 export class LeftContainer {
-private weather = inject(Weather)
+public weather = inject(Weather)
 }

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
+import {Weather} from '../services/weather';
 
 @Component({
   selector: 'app-right-container',
@@ -7,28 +8,25 @@ import { Component } from '@angular/core';
   styleUrl: './right-container.css'
 })
 export class RightContainer {
-  today:boolean = false;
-  week:boolean = true;
-  celsius:boolean = true;
-  fahrenheit:boolean = false;
+public weather = inject(Weather);
 
   onTodayClick(){
-    this.today=true;
-    this.week=false;
+    this.weather.today=true;
+    this.weather.week=false;
   }
 
   onWeekClick(){
-    this.today=false;
-    this.week=true;
+    this.weather.today=false;
+    this.weather.week=true;
   }
 
   onCelsiusClick(){
-    this.celsius=true;
-    this.fahrenheit=false;
+    this.weather.celsius=true;
+    this.weather.fahrenheit=false;
   }
 
   onFahrenheitClick(){
-    this.celsius=false;
-    this.fahrenheit=true;
+    this.weather.celsius=false;
+    this.weather.fahrenheit=true;
   }
 }

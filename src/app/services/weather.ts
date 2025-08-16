@@ -13,15 +13,20 @@ import {environment} from '../../environments/environment';
   providedIn: 'root'
 })
 export class Weather {
+  today:boolean = false;
+  week:boolean = true;
+  celsius:boolean = true;
+  fahrenheit:boolean = false;
+
   locationDetails?: locationDetails;
   weatherDetails?: weatherDetails;
   temperatureData: temperatureData = new temperatureData();
   todayData: todayData[] = [];
   weekData: weekData[] = [];
-  todaysHighlight?: todaysHighlight;
+  todaysHighlight: todaysHighlight = new todaysHighlight();
   currentTime: Date;
 
-  cityName: string = 'Tehran';
+  cityName: string = 'liverpool';
   language: string = 'en-US';
   date: string = '20250814';
   units: string = 'm';
@@ -84,6 +89,20 @@ export class Weather {
     this.fillTemperatureDataModel();
     this.fillWeekData();
     this.fillTodayData()
+    this.fillTodayHighlight();
+  }
+
+  celsiusToFahrenheit(celsius:number) :number {
+      return (celsius * 1.8 ) + 32;
+  }
+
+  fahrenheitToCelsius(fahrenheit:number) :number {
+    return (fahrenheit - 32 ) / 1.8;
+  }
+
+
+  getTimeFormString(localTime: string) {
+    return localTime.slice(11, 16);
   }
 
   fillTodayData(): void {
@@ -93,8 +112,18 @@ export class Weather {
       this.todayData[todayCount].time = this.weatherDetails['v3-wx-forecast-hourly-10day'].validTimeLocal[todayCount].slice(11.16);
       this.todayData[todayCount].temperature = this.weatherDetails['v3-wx-forecast-hourly-10day'].temperature[todayCount];
       this.todayData[todayCount].summaryImage = this.getSummaryImage(this.weatherDetails['v3-wx-forecast-hourly-10day'].wxPhraseShort[todayCount]);
-      todayCount ++;
+      todayCount++;
     }
+  }
+
+  fillTodayHighlight() {
+    this.todaysHighlight.airQuality = this.weatherDetails['v3-wx-globalAirQuality'].globalairquality.airQualityIndex;
+    this.todaysHighlight.humidity = this.weatherDetails['v3-wx-observations-current'].precip24Hour;
+    this.todaysHighlight.sunrise = this.getTimeFormString(this.weatherDetails['v3-wx-observations-current'].sunriseTimeLocal);
+    this.todaysHighlight.sunset = this.getTimeFormString(this.weatherDetails['v3-wx-observations-current'].sunsetTimeLocal);
+    this.todaysHighlight.uvIndex = this.weatherDetails['v3-wx-observations-current'].uvIndex;
+    this.todaysHighlight.visibility = this.weatherDetails['v3-wx-observations-current'].visibility;
+    this.todaysHighlight.windStatus = this.weatherDetails['v3-wx-observations-current'].windSpeed;
   }
 
   getLocationDetails(cityName: string, language: string): Observable<locationDetails> {
@@ -129,13 +158,12 @@ export class Weather {
         this.locationDetails = response;
         const latitude = this.locationDetails?.location.latitude[0];
         const longitude = this.locationDetails?.location.longitude[0];
-        console.log(this.locationDetails);
 
-        // ✅ Only call getWeatherReport after you have lat/lon
+        //  Only call getWeatherReport after you have lat/lon
         this.getWeatherReport(this.date, latitude, longitude, this.language, this.units).subscribe({
           next: (weatherResponse) => {
             this.weatherDetails = weatherResponse;
-            console.log(this.weatherDetails);
+            this.prepareData();
           },
           error: (err) => {
             console.error('Error fetching weather:', err);

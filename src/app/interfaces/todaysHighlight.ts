@@ -1,4 +1,4 @@
-export interface todaysHighlight {
+export class todaysHighlight {
   uvIndex:number;
   windStatus:number;
   sunrise:string;
