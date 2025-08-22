@@ -1,6 +1,6 @@
 <div class="left-container">
   <div class="left-container-nav-bar">
-    <div class="search-icon">
+    <div class="search-icon" (click)="onSearch(location.value)">
       <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none"
            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
            class="icon icon-tabler icons-tabler-outline icon-tabler-search">
@@ -10,9 +10,9 @@
       </svg>
     </div>
     <div class="search-input">
-      <input type="text" placeholder="Search for places ...">
+      <input type="text" placeholder="Search for places ..." #location>
     </div>
-    <div class="location-icon">
+    <div class="location-icon" (click)="onSearch(location.value)">
       <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"
            class="icon icon-tabler icons-tabler-filled icon-tabler-current-location">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -27,8 +27,8 @@
         <img class="left-container-temp-image" src="{{weather.temperatureData.summaryImage}}" alt="Summary Image">
       </div>
       <div class="left-container-temp-value">
-        {{ weather.celsius == true ? weather.temperatureData.temperature : weather.celsiusToFahrenheit(weather.temperatureData.temperature) }}
-        <sup>{{ weather.celsius == true ? "°C" : "°F" }}</sup>
+        {{ weather.celsius ? weather.temperatureData.temperature : weather.celsiusToFahrenheit(weather.temperatureData.temperature) }}
+        <sup>{{ weather.celsius ? "°C" : "°F" }}</sup>
       </div>
       `
       <div class="left-container-day-time">
@@ -41,13 +41,13 @@
         <div class="left-container-temp-summary-phrase-img">
 
           <img src="images/Weather-Icons/imgi_62_cloudy.svg">
-          <div class="left-container-temp-summary-value">{{weather.temperatureData.summaryPhrase}}</div>
+          <div class="left-container-temp-summary-value">{{ weather.temperatureData.summaryPhrase }}</div>
         </div>
         <div class="left-container-rain-stats">
           <div class="left-container-rain-stats-img">
             <img src="images/Weather-Icons/imgi_68_rain.svg">
             <div class="left-container-rain-stats-value">
-              Rain - {{weather.temperatureData.rainPercent}}
+              Rain - {{ weather.temperatureData.rainPercent }}
             </div>
           </div>
         </div>
@@ -57,7 +57,7 @@
             <img src="images/3225385.jpg" alt="city">
           </div>
           <div class="left-container-location-name">
-            {{weather.temperatureData.location}}
+            {{ weather.temperatureData.location }}
           </div>
         </div>
       </div>

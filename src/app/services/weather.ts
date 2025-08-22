@@ -13,17 +13,17 @@ import {environment} from '../../environments/environment';
   providedIn: 'root'
 })
 export class Weather {
-  today:boolean = false;
-  week:boolean = true;
-  celsius:boolean = true;
-  fahrenheit:boolean = false;
+  today: boolean = false;
+  week: boolean = true;
+  celsius: boolean = true;
+  fahrenheit: boolean = false;
 
   locationDetails?: locationDetails;
   weatherDetails?: weatherDetails;
   temperatureData: temperatureData = new temperatureData();
   todayData: todayData[] = [];
   weekData: weekData[] = [];
-  todaysHighlight: todaysHighlight = new todaysHighlight();
+  todaysHighlight: todaysHighlight;
   currentTime: Date;
 
   cityName: string = 'liverpool';
@@ -35,7 +35,6 @@ export class Weather {
 
   constructor() {
     this.getData();
-
   }
 
 
@@ -92,12 +91,12 @@ export class Weather {
     this.fillTodayHighlight();
   }
 
-  celsiusToFahrenheit(celsius:number) :number {
-      return + ((celsius * 1.8 ) + 32).toFixed(2);
+  celsiusToFahrenheit(celsius: number): number {
+    return +((celsius * 1.8) + 32).toFixed(2);
   }
 
-  fahrenheitToCelsius(fahrenheit:number) :number {
-    return + ((fahrenheit - 32 ) * 0.555).toFixed(2);
+  fahrenheitToCelsius(fahrenheit: number): number {
+    return +((fahrenheit - 32) * 0.555).toFixed(2);
   }
 
 
@@ -118,7 +117,7 @@ export class Weather {
 
   fillTodayHighlight() {
     this.todaysHighlight.airQuality = this.weatherDetails['v3-wx-globalAirQuality'].globalairquality.airQualityIndex;
-    this.todaysHighlight.humidity = this.weatherDetails['v3-wx-observations-current'].precip24Hour;
+    this.todaysHighlight.humidity = this.weatherDetails['v3-wx-observations-current'].relativeHumidity;
     this.todaysHighlight.sunrise = this.getTimeFormString(this.weatherDetails['v3-wx-observations-current'].sunriseTimeLocal);
     this.todaysHighlight.sunset = this.getTimeFormString(this.weatherDetails['v3-wx-observations-current'].sunsetTimeLocal);
     this.todaysHighlight.uvIndex = this.weatherDetails['v3-wx-observations-current'].uvIndex;
@@ -153,6 +152,11 @@ export class Weather {
 
 
   getData() {
+    this.todayData = [];
+    this.weekData = [];
+    this.temperatureData = new temperatureData();
+    this.todaysHighlight = new todaysHighlight();
+
     this.getLocationDetails(this.cityName, this.language).subscribe({
       next: (response) => {
         this.locationDetails = response;

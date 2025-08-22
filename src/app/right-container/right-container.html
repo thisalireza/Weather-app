@@ -42,10 +42,10 @@
             </div>
             <div class="card-temp-value">
           <span class="temp-max">
-            {{ this.weather.celsius ? card.tempMax : this.weather.celsiusToFahrenheit(card.tempMax) }} °
+            {{ this.weather.celsius ? card.tempMax : this.weather.celsiusToFahrenheit(card.tempMax) }} {{ weather.celsius ? "°C" : "°F" }}
           </span>
               <span class="temp-min">
-            {{ this.weather.celsius ? card.tempMin : this.weather.celsiusToFahrenheit(card.tempMin) }} °
+            {{ this.weather.celsius ? card.tempMin : this.weather.celsiusToFahrenheit(card.tempMin) }} {{ weather.celsius ? "°C" : "°F" }}
           </span>
             </div>
           </div>
@@ -64,7 +64,7 @@
               <img class="card-temp-img" src="{{card.summaryImage}}" alt="">
             </div>
             <div class="card-temp-value">
-              {{ this.weather.celsius ? card.temperature : this.weather.celsiusToFahrenheit(card.temperature) }}°
+              {{ this.weather.celsius ? card.temperature : this.weather.celsiusToFahrenheit(card.temperature) }}{{ weather.celsius ? "°C" : "°F" }}
             </div>
           </div>
         }
@@ -134,7 +134,7 @@
             Humidity
           </div>
           <div class="wind-status-value">{{weather.todaysHighlight.humidity}} <sup class="unit">%</sup></div>
-          <div class="Humidity-summary">Normal</div>
+          <div class="Humidity-summary">{{weather.todaysHighlight.humidity < 50 ? "Normal" : "High"}}</div>
 
         </div>
 
@@ -143,7 +143,7 @@
             Visibility
           </div>
           <div class="wind-status-value">{{weather.todaysHighlight.visibility}} <span class="unit">km</span></div>
-          <div class="Humidity-summary">Average</div>
+          <div class="Humidity-summary">{{weather.todaysHighlight.visibility > 25 ? "Normal" : "Low"}}</div>
         </div>
 
         <div class="right-container-today-highlight-card">
@@ -152,7 +152,7 @@
           </div>
           <div class="wind-status-value">{{weather.todaysHighlight.airQuality}}</div>
 
-          <div class="Humidity-summary">Unhealthy</div>
+          <div class="Humidity-summary">{{weather.todaysHighlight.airQuality < 100 ? "Satisfactory" : "Unhealthy"}}</div>
         </div>
       </div>
     </div>
