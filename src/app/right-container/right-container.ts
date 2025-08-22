@@ -3,7 +3,8 @@ import {Weather} from '../services/weather';
 
 @Component({
   selector: 'app-right-container',
-  imports: [],
+  imports: [
+  ],
   templateUrl: './right-container.html',
   styleUrl: './right-container.css'
 })

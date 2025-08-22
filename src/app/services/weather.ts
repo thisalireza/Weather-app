@@ -78,8 +78,8 @@ export class Weather {
     while (weekCount < 7) {
       this.weekData.push(new weekData());
       this.weekData[weekCount].day = this.weatherDetails['v3-wx-forecast-daily-15day'].dayOfWeek[weekCount].slice(0.3);
-      this.weekData[weekCount].tempMax = this.weatherDetails['v3-wx-forecast-daily-15day'].calendarDayTemperatureMax[weekCount].toString();
-      this.weekData[weekCount].tempMin = this.weatherDetails['v3-wx-forecast-daily-15day'].calendarDayTemperatureMin[weekCount].toString();
+      this.weekData[weekCount].tempMax = this.weatherDetails['v3-wx-forecast-daily-15day'].calendarDayTemperatureMax[weekCount];
+      this.weekData[weekCount].tempMin = this.weatherDetails['v3-wx-forecast-daily-15day'].calendarDayTemperatureMin[weekCount];
       this.weekData[weekCount].summaryImage = this.getSummaryImage(this.weatherDetails['v3-wx-forecast-daily-15day'].narrative[weekCount]);
       weekCount++;
     }
@@ -93,11 +93,11 @@ export class Weather {
   }
 
   celsiusToFahrenheit(celsius:number) :number {
-      return (celsius * 1.8 ) + 32;
+      return + ((celsius * 1.8 ) + 32).toFixed(2);
   }
 
   fahrenheitToCelsius(fahrenheit:number) :number {
-    return (fahrenheit - 32 ) / 1.8;
+    return + ((fahrenheit - 32 ) * 0.555).toFixed(2);
   }
 
 

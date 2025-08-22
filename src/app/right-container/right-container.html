@@ -31,221 +31,43 @@
   <div class="right-container-data-box">
     <div class="right-container-week-cards">
       @if (weather.week) {
-        <div class="card">
-          <div class="card-day">
-            sun
-          </div>
-          <div>
-            <img class="card-temp-img" src="images/Weather-Icons/imgi_60_clear-day.svg" alt="">
-          </div>
-          <div class="card-temp-value">
+        @for (card of weather.weekData; track card) {
+          <div class="card">
+
+            <div class="card-day">
+              {{ card.day }}
+            </div>
+            <div>
+              <img class="card-temp-img" src="{{card.summaryImage}}" alt="">
+            </div>
+            <div class="card-temp-value">
           <span class="temp-max">
-            15°
+            {{ this.weather.celsius ? card.tempMax : this.weather.celsiusToFahrenheit(card.tempMax) }} °
           </span>
-            <span class="temp-min">
-            -3°
+              <span class="temp-min">
+            {{ this.weather.celsius ? card.tempMin : this.weather.celsiusToFahrenheit(card.tempMin) }} °
           </span>
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <div class="card-day">
-            sun
-          </div>
-          <div>
-            <img class="card-temp-img" src="images/Weather-Icons/imgi_60_clear-day.svg" alt="">
-          </div>
-          <div class="card-temp-value">
-          <span class="temp-max">
-            15°
-          </span>
-            <span class="temp-min">
-            -3°
-          </span>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-day">
-            sun
-          </div>
-          <div>
-            <img class="card-temp-img" src="images/Weather-Icons/imgi_60_clear-day.svg" alt="">
-          </div>
-          <div class="card-temp-value">
-          <span class="temp-max">
-            15°
-          </span>
-            <span class="temp-min">
-            -3°
-          </span>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-day">
-            sun
-          </div>
-          <div>
-            <img class="card-temp-img" src="images/Weather-Icons/imgi_60_clear-day.svg" alt="">
-          </div>
-          <div class="card-temp-value">
-          <span class="temp-max">
-            15°
-          </span>
-            <span class="temp-min">
-            -3°
-          </span>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-day">
-            sun
-          </div>
-          <div>
-            <img class="card-temp-img" src="images/Weather-Icons/imgi_60_clear-day.svg" alt="">
-          </div>
-          <div class="card-temp-value">
-          <span class="temp-max">
-            15°
-          </span>
-            <span class="temp-min">
-            -3°
-          </span>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-day">
-            sun
-          </div>
-          <div>
-            <img class="card-temp-img" src="images/Weather-Icons/imgi_60_clear-day.svg" alt="">
-          </div>
-          <div class="card-temp-value">
-          <span class="temp-max">
-            15°
-          </span>
-            <span class="temp-min">
-            -3°
-          </span>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-day">
-            sun
-          </div>
-          <div>
-            <img class="card-temp-img" src="images/Weather-Icons/imgi_60_clear-day.svg" alt="">
-          </div>
-          <div class="card-temp-value">
-          <span class="temp-max">
-            15°
-          </span>
-            <span class="temp-min">
-            -3°
-          </span>
-          </div>
-        </div>
+        }
       }
     </div>
 
     <div class="right-container-today-cards">
       @if (weather.today) {
-        <div class="card">
-          <div class="card-day">
-            12:00
+        @for (card of weather.todayData; track card) {
+          <div class="card">
+            <div class="card-day">
+              {{ card.time }}
+            </div>
+            <div>
+              <img class="card-temp-img" src="{{card.summaryImage}}" alt="">
+            </div>
+            <div class="card-temp-value">
+              {{ this.weather.celsius ? card.temperature : this.weather.celsiusToFahrenheit(card.temperature) }}°
+            </div>
           </div>
-          <div>
-            <img class="card-temp-img" src="images/Weather-Icons/imgi_60_clear-day.svg" alt="">
-          </div>
-          <div class="card-temp-value">
-
-            15°
-
-
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-day">
-            12:00
-          </div>
-          <div>
-            <img class="card-temp-img" src="images/Weather-Icons/imgi_60_clear-day.svg" alt="">
-          </div>
-          <div class="card-temp-value">
-
-            15°
-
-
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-day">
-            12:00
-          </div>
-          <div>
-            <img class="card-temp-img" src="images/Weather-Icons/imgi_60_clear-day.svg" alt="">
-          </div>
-          <div class="card-temp-value">
-
-            15°
-
-
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-day">
-            12:00
-          </div>
-          <div>
-            <img class="card-temp-img" src="images/Weather-Icons/imgi_60_clear-day.svg" alt="">
-          </div>
-          <div class="card-temp-value">
-
-            15°
-
-
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-day">
-            12:00
-          </div>
-          <div>
-            <img class="card-temp-img" src="images/Weather-Icons/imgi_60_clear-day.svg" alt="">
-          </div>
-          <div class="card-temp-value">
-
-            15°
-
-
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-day">
-            12:00
-          </div>
-          <div>
-            <img class="card-temp-img" src="images/Weather-Icons/imgi_60_clear-day.svg" alt="">
-          </div>
-          <div class="card-temp-value">
-
-            15°
-
-
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-day">
-            12:00
-          </div>
-          <div>
-            <img class="card-temp-img" src="images/Weather-Icons/imgi_60_clear-day.svg" alt="">
-          </div>
-          <div class="card-temp-value">
-
-            15°
-
-
-          </div>
-        </div>
+        }
       }
     </div>
 
@@ -268,14 +90,14 @@
               </div>
             </div>
           </div>
-          <div class="right-container-today-highlight-value">5</div>
+          <div class="right-container-today-highlight-value">{{weather.todaysHighlight.uvIndex}}</div>
         </div>
 
         <div class="right-container-today-highlight-card">
           <div class="right-container-today-highlight-card-title">
             Wind Status
           </div>
-          <div class="wind-status-value">7.70 <span class="unit">km/h</span></div>
+          <div class="wind-status-value">{{weather.todaysHighlight.windStatus}}<span class="unit">km/h</span></div>
           <div class="wind-status-logo">
             <img src="images/Weather-Icons/imgi_14_dust-wind.svg" alt="">
           </div>
@@ -293,7 +115,7 @@
 
               </div>
               <div class="sunrise-time">
-                6:35 AM
+                {{weather.todaysHighlight.sunrise}} AM
               </div>
             </div>
             <div class="sunset">
@@ -301,7 +123,7 @@
                 <img src="images/Weather-Icons/imgi_100_sunset.svg" alt="">
               </div>
               <div class="sunset-time">
-                5:42 PM
+                {{weather.todaysHighlight.sunset}} PM
               </div>
             </div>
           </div>
@@ -311,7 +133,7 @@
           <div class="right-container-today-highlight-card-title">
             Humidity
           </div>
-          <div class="wind-status-value">12 <sup class="unit">%</sup></div>
+          <div class="wind-status-value">{{weather.todaysHighlight.humidity}} <sup class="unit">%</sup></div>
           <div class="Humidity-summary">Normal</div>
 
         </div>
@@ -320,7 +142,7 @@
           <div class="right-container-today-highlight-card-title">
             Visibility
           </div>
-          <div class="wind-status-value">5.2 <span class="unit">km</span></div>
+          <div class="wind-status-value">{{weather.todaysHighlight.visibility}} <span class="unit">km</span></div>
           <div class="Humidity-summary">Average</div>
         </div>
 
@@ -328,7 +150,7 @@
           <div class="right-container-today-highlight-card-title">
             Air Quality
           </div>
-          <div class="wind-status-value">105</div>
+          <div class="wind-status-value">{{weather.todaysHighlight.airQuality}}</div>
 
           <div class="Humidity-summary">Unhealthy</div>
         </div>
