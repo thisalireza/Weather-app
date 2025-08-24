@@ -87,7 +87,7 @@
 
 .celsius {
   border-radius: 100%;
-  padding: 5px 8px;
+  padding: 9px 10px;
   color: #1a1a1a;
   background-color: #ffffff;
   font-size: small;
@@ -106,7 +106,7 @@
 
 .fahrenheit {
   border-radius: 100%;
-  padding: 5px 8px;
+  padding: 9px 10px;
   color: #1a1a1a;
   background-color: #ffffff;
   font-size: small;
@@ -187,7 +187,7 @@
 .right-container-today-highlight-cards {
   display: flex;
   flex: 8;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: row;
   align-items: center;
   margin-top: -20px;
@@ -199,21 +199,20 @@
   flex: 2;
   margin-top: 30px;
   margin-bottom: 30px;
-  font-weight: bold;
-  font-size: small;
+
+
 }
 
 .right-container-today-highlight-card {
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  border-radius: 10px;
-  width: 27.1%;
+  border-radius: 12px;
+  width: 29.5%;
   height: 150px;
-padding: 12px;
+  padding: 12px;
   align-items: center;
   text-align: center;
-  margin-left: 12px;
   margin-top: 12px;
 }
 
@@ -272,9 +271,10 @@ padding: 12px;
 .right-container-today-highlight-card-title {
   flex: 1;
   color: #c9c9c9;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
-  margin-left: 20px;
+  text-align: center;
+  padding-top: 10px;
 }
 
 .right-container-today-highlight-value {
@@ -290,22 +290,29 @@ padding: 12px;
   font-size: 40px;
   font-weight: 500;
   text-align: center;
-  margin-top: -20px;
+  padding-top: 12px;
+}
+
+.Humidity-status-value , .visibility-status-value , .air-quality-status-value {
+  flex: 2;
+  font-size: 40px;
+  font-weight: 500;
+  text-align: center;
 }
 
 .wind-status-logo {
   flex: 1;
-  align-self: self-start;
-  margin-left: 30px;
+  align-self: center;
 }
 
 .wind-status-logo img {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
 }
 
 .unit {
   font-size: 16px;
+  padding-left: 2px;
 }
 
 
@@ -366,7 +373,7 @@ padding: 12px;
 }
 
 .Humidity-summary {
-  font-size: small;
+  font-size: smaller;
   font-weight: 500;
-  margin-bottom: 20px;
+  padding-bottom: 10px;
 }

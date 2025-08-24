@@ -80,14 +80,15 @@
 }
 
 img.left-container-temp-image {
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
 }
 
 .left-container-temp-value {
   flex: 1;
-  font-size: 62px;
+  font-size: 70px;
   font-weight: normal;
+  margin-top: -40px;
 }
 
 .left-container-temp-value sup {
@@ -100,7 +101,7 @@ img.left-container-temp-image {
   flex: 1;
   font-weight: 500;
   color: #000;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .left-container-temp-summary {

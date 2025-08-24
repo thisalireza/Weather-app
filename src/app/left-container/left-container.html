@@ -10,8 +10,7 @@
       </svg>
     </div>
     <div class="search-input">
-      <input  type="text" placeholder="Search for places ..." #location>
-      <input type="submit" value="Search">
+      <input  type="text"   placeholder="Search for places ..." (keyup.enter)="onSearch(location.value)" #location>
     </div>
     <div class="location-icon" (click)="onSearch(location.value)">
       <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"
@@ -31,7 +30,7 @@
         {{ weather.celsius ? weather.temperatureData.temperature : weather.celsiusToFahrenheit(weather.temperatureData.temperature) }}
         <sup>{{ weather.celsius ? "°C" : "°F" }}</sup>
       </div>
-      `
+
       <div class="left-container-day-time">
         {{ weather.temperatureData.day }} , <span class="time">{{ weather.temperatureData.time }}</span>
       </div>
@@ -41,14 +40,14 @@
       <div class="left-container-temp-summary">
         <div class="left-container-temp-summary-phrase-img">
 
-          <img src="images/Weather-Icons/imgi_62_cloudy.svg">
+          <img  src="{{weather.temperatureData.summaryImage}}" alt="">
           <div class="left-container-temp-summary-value">{{ weather.temperatureData.summaryPhrase }}</div>
         </div>
         <div class="left-container-rain-stats">
           <div class="left-container-rain-stats-img">
             <img src="images/Weather-Icons/imgi_68_rain.svg">
             <div class="left-container-rain-stats-value">
-              Rain - {{ weather.temperatureData.rainPercent }}
+              Rain Percent : {{ weather.temperatureData.rainPercent }}%
             </div>
           </div>
         </div>
