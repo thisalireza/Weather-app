@@ -1,9 +1,11 @@
 import {Component, inject} from '@angular/core';
 import {Weather} from '../services/weather';
+import {TimeFormatPipe} from '../../pipes/time-format-pipe';
 
 @Component({
   selector: 'app-right-container',
   imports: [
+    TimeFormatPipe
   ],
   templateUrl: './right-container.html',
   styleUrl: './right-container.css'

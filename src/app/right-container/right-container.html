@@ -58,7 +58,7 @@
         @for (card of weather.todayData; track card) {
           <div class="card">
             <div class="card-day">
-              {{ card.time }}
+              {{ card.time | timeFormat }}
             </div>
             <div>
               <img class="card-temp-img" src="{{card.summaryImage}}" alt="">

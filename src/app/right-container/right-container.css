@@ -328,6 +328,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-top: 5px;
 }
 
 .sunrise-img {
@@ -337,8 +338,8 @@
 }
 
 .sunrise-img img {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
 }
 
 .sunrise-time {
@@ -352,6 +353,8 @@
   flex: 1;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  margin-top: -15px;
 }
 
 
@@ -365,11 +368,12 @@
   flex: 4;
   font-weight: 500;
   font-size: 16px;
+
 }
 
 .sunset-img img {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
 }
 
 .Humidity-summary {
