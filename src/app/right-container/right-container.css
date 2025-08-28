@@ -45,12 +45,12 @@
 }
 
 .today:hover {
-  color: #1a1a1a;
+  color: #fff;
   cursor: pointer;
 }
 
 .today-active {
-  color: #1a1a1a;
+  color: #fff;
 }
 
 .week {
@@ -58,19 +58,19 @@
 }
 
 .week:hover {
-  color: #1a1a1a;
+  color: #fff;
   cursor: pointer;
 }
 
 .week-active {
-  color: #1a1a1a;
+  color: #fff;
 }
 
 
 .underline {
   width: 50px;
   height: 2px;
-  background-color: #1a1a1a;
+  background-color: #fff;
   margin-top: 1.6rem;
 }
 
@@ -116,14 +116,14 @@
 }
 
 .fahrenheit :hover {
-  color: #ffffff;
-  background-color: #1a1a1a;
+  color: #000;
+  background-color: #c5c5c5;
 }
 
 
 .fahrenheit-active {
-  color: #ffffff;
-  background-color: #1a1a1a;
+  color: #000;
+  background-color: #c5c5c5;
 }
 
 
@@ -151,6 +151,7 @@
 
 
 .card {
+  color: black;
   width: 110px;
   height: 145px;
   background-color: #ffffff;
@@ -192,6 +193,7 @@
   align-items: center;
   margin-top: -20px;
   flex-wrap: wrap;
+  color: black;
 }
 
 

@@ -26,7 +26,7 @@ export class Weather {
   todaysHighlight: todaysHighlight;
   currentTime: Date;
 
-  cityName: string = 'liverpool';
+  cityName: string = 'tehran';
   language: string = 'en-US';
   date: string = '20250814';
   units: string = 'm';
@@ -177,6 +177,18 @@ export class Weather {
       error: (err) => {
         console.error('Error fetching location:', err);
       }
+    });
+  }
+
+
+  getCitySuggestions(query: string) {
+    return this.httpClient.get<locationDetails>(environment.weatherApiLocationBaseURL, {
+      headers: new HttpHeaders()
+        .set(environment.xRapidApiKeyName, environment.xRapidApiKeyValue)
+        .set(environment.xRapidApiHostName, environment.xRapidApiHostValue),
+      params: new HttpParams()
+        .set('query', query)
+        .set('language', this.language)
     });
   }
 

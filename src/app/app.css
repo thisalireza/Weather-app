@@ -1,11 +1,58 @@
 .app-container {
-  width: 100vw;
-  height: 100vh;
-  background-color: #d6d7da;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.bg-video-wrap {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  inset: 0;                /* top:0 right:0 bottom:0 left:0 */
+  overflow: hidden;
+  z-index: -1;             /* behind everything */
+}
+
+
+/* Container to stack video behind content */
+.bg-video-wrap {
+  position: fixed;
+  inset: 0;                /* top:0 right:0 bottom:0 left:0 */
+  overflow: hidden;
+  z-index: -1;             /* behind everything */
+}
+
+/* The video itself */
+.bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;       /* fill while cropping */
+
+}
+
+/* Your foreground content */
+
+
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 
 .weather-container {
   width: 1280px;
@@ -13,11 +60,18 @@
   border-radius: 30px;
   display: flex;
   flex-direction: row;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  animation: fadeIn 1.5s ease-in-out;
 }
 
 .left-container {
   flex: 3;
-  background-color: #ffffff;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
 
@@ -25,7 +79,6 @@
 
 .right-container {
   flex: 7;
-  background-color: #f6f6f8;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
 }

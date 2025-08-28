@@ -9,9 +9,23 @@
         <path d="M21 21l-6 -6"/>
       </svg>
     </div>
-    <div class="search-input">
-      <input  type="text"   placeholder="Search for places ..." (keyup.enter)="onSearch(location.value)" #location>
-    </div>
+<!--      <input  type="text" placeholder="Search for places ..." (keyup.enter)="onSearch(location.value)" #location>-->
+      <div class="search-container">
+        <input
+          type="text"
+          placeholder="Search for places..."
+          [(ngModel)]="searchQuery"
+          (input)="onSearchChange()"
+          #location
+        />
+
+        <!-- Suggestions Dropdown -->
+        <ul *ngIf="suggestions.length > 0" class="suggestions">
+          <li *ngFor="let city of suggestions" (click)="selectCity(city)">
+            {{ city }}
+          </li>
+        </ul>
+      </div>
     <div class="location-icon" (click)="onSearch(location.value)">
       <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"
            class="icon icon-tabler icons-tabler-filled icon-tabler-current-location">
@@ -41,7 +55,9 @@
         <div class="left-container-temp-summary-phrase-img">
 
           <img  src="{{weather.temperatureData.summaryImage}}" alt="">
-          <div class="left-container-temp-summary-value">{{ weather.temperatureData.summaryPhrase }}</div>
+          <div class="left-container-temp-summary-value">
+            Summary Phrase: {{ weather.temperatureData.summaryPhrase }}
+          </div>
         </div>
         <div class="left-container-rain-stats">
           <div class="left-container-rain-stats-img">

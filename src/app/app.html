@@ -1,11 +1,24 @@
-<div class="app-container">
-  <div class="weather-container">
-    <div class="left-container">
-      <app-left-container></app-left-container>
-    </div>
+<div class="bg-video-wrap" aria-hidden="true">
+  <video
+    class="bg-video"
+    autoplay
+    loop
+    muted
+    preload="auto"
+  >
+    <source src="images/182288-868067168_small.mp4" type="video/mp4"/>
+    Your browser does not support the video tag.
+  </video>
+</div>
+  <div class="app-container">
+    <div class="weather-container">
+      <div class="left-container">
+        <app-left-container></app-left-container>
+      </div>
 
-    <div class="right-container">
-      <app-right-container></app-right-container>
+      <div class="right-container">
+        <app-right-container></app-right-container>
+      </div>
     </div>
   </div>
-</div>
+
